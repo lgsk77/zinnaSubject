@@ -1,0 +1,11 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+
+<beans>
+
+    <bean name="xmlView" class="com.xxxxx.view.AjaxResponseXMLView">
+        <property name="contentType">
+            <value>text/xml;charset=utf-8</value>
+        </property>
+    </bean>
+
+</beans>
