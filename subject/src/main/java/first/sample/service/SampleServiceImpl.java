@@ -15,9 +15,9 @@ public class SampleServiceImpl implements SampleService{
 	@Resource(name="sampleDAO")
 	private SampleDAO sampleDAO;
 	
-	@Override
+	@Override										//여기서 db에 입력할 parameter값을 입력
 	public List<Map<String, Object>> selectBoardList(Map<String, Object> map) throws Exception {
-		// TODO Auto-generated method stub
+		//return이 받아 오는 값
 		return sampleDAO.selectBoardList(map);
 	}
  
