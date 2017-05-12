@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="daily">
+  
+    <select id="selectdaily" parameterType="hashmap" resultType="hashmap">
+        SELECT * FROM DAILY
+    </select>
+  
+  	<delete id="deletedaily" parameterType="hashmap">
+  		DELETE FROM DAILY WHERE NAME = #{name} AND DETAILS = #{detail} AND EMAIL =#{email}
+  	</delete>
+  	
+  	<update id="updatedaily" parameterType="hashmap" >
+  		UPDATE DAILY SET DETAILS = #{detail} WHERE NAME = #{name}
+  	</update>
+  	
+  	<insert id="insertdaily" parameterType="hashmap">
+  		INSERT INTO DAILY(NAME,EMAIL,AGE,DETAILS) VALUES(#{name},#{email},#{age},#{detail})
+  	</insert>
+  	
+  	<select id="searchdaily" parameterType="hashmap" resultType="hashmap">
+  		SELECT * FROM DAILY WHERE NAME = #{name}
+  	</select>
+  	
+</mapper>
