@@ -1,0 +1,16 @@
+---- 20170512
+개인 정보 기록용 클라이언트
+DailyServer 구동시켜야 사용가능
+
+쓰레드 풀을 이용해서 돌아감
+UI -> Controller -> Manager -> Service -> dao -> network
+이 순으로 돌아간다.
+소스 분석시에 이 순으로 따라가면서 보면 된다.
+
+Controller - magager에게 일 넘긴다.
+Manager - 싱글턴, 쓰레드 풀, service에게 일 넘긴다.
+Service - 쓰레드, Manager에서 run시켜서 dao클래스 실행
+network - 네트워크 이용을 위해서 만든 클래서 networkdao에서 사용
+
+service에서 AlwaysDailyService와  DailyService는 현재 사용하지않음.
+notify,wait과 쓰레드안쓴 방법인데 기록을 위해 남겨둠
