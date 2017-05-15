@@ -20,7 +20,7 @@ public class ThreadManager {
 
 	private JTextArea tarea;*/
 	
-	private ThreadManager() {
+	private ThreadManager() { 
 		executorService = Executors.newFixedThreadPool(5);
 	}
 
@@ -64,7 +64,7 @@ public class ThreadManager {
 		executorService.execute(new PoolDailyService(Command, type, tarea, dailyVO));
 	}*/
 	
-	public void clickButton(Thread thread) {
+	public void executeThread(Thread thread) {
 		executorService.execute(thread);
 	}
 }
